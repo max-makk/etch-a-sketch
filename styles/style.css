@@ -63,46 +63,40 @@ h1 {
     position: absolute;
     top: 0;
     left: 50%;
-    /* display: grid; */
+    overflow: hidden;
     transform: translateX(-50%);
     grid-template-columns: 45% 10% 45%;
     font-size: 1.5rem;
-    /* background: var(--brown); */
-    background: var(--white);
-    border: 1px solid black;
-    border: 5px solid black;
+    background: var(--brown);
+    border: 5px solid var(--brown);
     border-radius: 1em;
     text-align: center;
     align-items: center;
     justify-content: center;
-    width: 30%;
+    min-width: 20%;
+    color: var(--orange);
 }
 
 span {
-    background: var(--brown);
     height: 100%;
     padding-top: 0.4em;
 }
 
 .input-right {
-    grid-column: 2 / 3;
+    grid-column: 3 / 4;
     align-self: center;
-    background: var(--brown);
     height: 100%;
     padding-top: 0.4em;
 }
 
 label {
+    background: var(--white);
     padding: 0.5em 0;
     grid-column: 1 / 4;
 }
 
 .input-left {
     grid-column: 1 / 2;
-}
-
-.input-right {
-    grid-column: 3 / 4;
 }
 
 input {
@@ -113,7 +107,6 @@ input {
     color: inherit;
     font-family: inherit;
     font-size: inherit;
-    background: var(--brown);
     outline: none;
     text-align: center;
 }
@@ -124,23 +117,36 @@ input::placeholder {
 
 .btn-new-grid {
     grid-column: 1 / 4;
-    /* grid-row-start: 1 / 4; */
     border: 1px solid var(--black);
     border: none;
     font-size: 2rem;
-    margin-top: 1em;
     background: inherit;
-    color: var(--orange);
-    padding-bottom: 0.5em;
-    border-radius: 1em;
+    color: inherit;
+    padding: 0.5em;
     cursor: pointer;
+    background: var(--white);
+    transition: ease-out 0.2s;
+}
+
+.btn-new-grid:hover {
+    background: var(--brown);
 }
 
 .close {
+    line-height: 1.5em;
     position: absolute;
     cursor: pointer;
+    width: 1.5em;
+    height: 1.5em;
     top: 0.5em;
-    right: 1em;
+    right: 0.5em;
+    background: var(--brown);
+    border-radius: 100%;
+}
+
+.close:hover {
+    background: var(--orange);
+    color: var(--white);
 }
 
 .container {

@@ -9,7 +9,6 @@ let mouseTarget;
 popUp.style.display = 'none';
 buttonNewGrid.disabled = true;
 
-
 // ******************************************************** Grid
 
 function generateGrid() {
@@ -96,6 +95,9 @@ closeBtn.addEventListener('click', function() {
 mouseTarget.forEach(el => el.addEventListener('mouseenter', setColor));
 
 buttonNewGrid.addEventListener('click', function() {
+    if(inputLeft.value === "") {
+     return   
+    }
     container.innerHTML = '';
     generateGrid()
 
