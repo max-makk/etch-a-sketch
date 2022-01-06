@@ -58,18 +58,18 @@ h1 {
 
 .pop-up {
   position: absolute;
-  top: 0;
+  top: 10%;
   left: 50%;
   overflow: hidden;
   transform: translateX(-50%);
   grid-template-columns: 45% 10% 45%;
-  font-size: 1.5rem;
+  font-size: 2rem;
   background: var(--brown);
   border: 5px solid var(--brown);
   border-radius: 0.1em;
   text-align: center;
   align-items: center;
-  justify-content: center;
+  align-content: center;
   min-width: 20%;
   color: var(--orange);
 }
@@ -116,10 +116,11 @@ input::placeholder {
   grid-column: 1 / 4;
   border: 1px solid var(--black);
   border: none;
-  font-size: 2rem;
+  font-size: 2.2rem;
+  font-family: monospace;
   background: inherit;
   color: inherit;
-  padding: 0.5em;
+  padding: 0.4em;
   cursor: pointer;
   background: var(--white);
   transition: ease-out 0.2s;
@@ -130,7 +131,6 @@ input::placeholder {
 }
 
 .close {
-  line-height: 1.5em;
   position: absolute;
   cursor: pointer;
   width: 1.5em;
@@ -141,9 +141,30 @@ input::placeholder {
   border-radius: 100%;
 }
 
+.close:before,
+.close:after {
+  position: absolute;
+  top: 24%;
+  left: 48%;
+  content: " ";
+  height: 25px;
+  width: 3px;
+  background-color: var(--orange);
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
+
 .close:hover {
   background: var(--orange);
-  color: var(--white);
+}
+
+.close:hover::before,
+.close:hover::after {
+  background-color: var(--white);
 }
 
 .container {
@@ -182,4 +203,3 @@ input::placeholder {
   padding-top: 100%;
 }
 */
-
