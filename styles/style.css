@@ -58,7 +58,7 @@ h1 {
 
 .pop-up {
   position: absolute;
-  top: 10%;
+  top: 2%;
   left: 50%;
   overflow: hidden;
   transform: translateX(-50%);
@@ -190,7 +190,7 @@ input::placeholder {
 }
 
 .box {
-  outline: 1px solid var(--black);
+  box-shadow: 0 0 0 1px black;
   display: block;
   height: 100%;
   width: 100%;
