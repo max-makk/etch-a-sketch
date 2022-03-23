@@ -121,6 +121,14 @@ function applyNewGrid() {
   if (inputLeft.value === "") {
     return;
   }
+  if(+inputLeft.value > 100) {
+    alert('maximum 100')
+    return
+  }
+ if(+inputLeft.value < 1) {
+    inputLeft.value = "1"
+    return
+  }
   container.innerHTML = "";
   generateGrid();
 
