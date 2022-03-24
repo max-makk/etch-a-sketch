@@ -135,4 +135,5 @@ function applyNewGrid() {
   }
   container.innerHTML = "";
   generateGrid();
+  popUp.style.display = "none";
 }
