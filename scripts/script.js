@@ -89,10 +89,11 @@ inputLeft.addEventListener("input", function (e) {
       inputLeft.value = "100";
       return;
     }
-    if (+inputLeft.value < 1 || inputLeft.value === "") {
-      inputLeft.value = "4";
+    if (+inputLeft.value < 0 || inputLeft.value === "0") {
+      inputLeft.value = "1";
       return;
     }
+
     buttonNewGrid.disabled = true;
     buttonNewGrid.textContent = ":(";
   }
@@ -129,6 +130,9 @@ closeBtn.addEventListener("click", function () {
 mouseTarget.forEach((el) => el.addEventListener("mouseenter", setColor));
 
 function applyNewGrid() {
+  if (inputLeft.value === "") {
+    return;
+  }
   container.innerHTML = "";
   generateGrid();
 }
