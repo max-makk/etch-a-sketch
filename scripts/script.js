@@ -19,6 +19,8 @@ function generateGrid() {
   for (let index = 0; index < sqr; index++) {
     const div = document.createElement("div");
     div.classList.add("box");
+    div.addEventListener("mouseenter", setColor);
+    div.addEventListener("touchstart", setColor);
     container.appendChild(div);
   }
   mouseTarget = document.querySelectorAll(".container div");
@@ -82,6 +84,15 @@ inputLeft.addEventListener("input", function (e) {
     buttonNewGrid.textContent = "OK";
     buttonNewGrid.disabled = false;
   } else {
+    if (+inputLeft.value > 100) {
+      alert("maximum 100");
+      inputLeft.value = "100";
+      return;
+    }
+    if (+inputLeft.value < 1 || inputLeft.value === "") {
+      inputLeft.value = "4";
+      return;
+    }
     buttonNewGrid.disabled = true;
     buttonNewGrid.textContent = ":(";
   }
@@ -118,19 +129,6 @@ closeBtn.addEventListener("click", function () {
 mouseTarget.forEach((el) => el.addEventListener("mouseenter", setColor));
 
 function applyNewGrid() {
-  if (inputLeft.value === "") {
-    return;
-  }
-  if(+inputLeft.value > 100) {
-    alert('maximum 100')
-    return
-  }
- if(+inputLeft.value < 1) {
-    inputLeft.value = "1"
-    return
-  }
   container.innerHTML = "";
   generateGrid();
-
-  mouseTarget.forEach((el) => el.addEventListener("mouseenter", setColor));
 }
